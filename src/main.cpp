@@ -5,4 +5,12 @@
 
 int main()
 {
+    // welcome to the playground...
+    // HCSA := Hill Climbing Steepest Ascent
+    // SA := Simulated Annealing
+    // GA := Genetic Algorithm
+    // CUBE := Magic Cube
+
+    GA x(100, 1000);
+    x.RUN();
 }

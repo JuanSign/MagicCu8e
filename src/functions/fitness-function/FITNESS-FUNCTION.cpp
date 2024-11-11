@@ -1,8 +1,16 @@
 #include "FITNESS-FUNCTION.hpp"
 
+#include <cmath>
+#include <numeric>
+
 int FITNESS_FUNCTION::OPTION_0(CUBE cube)
 {
-    return 0;
+    int res = 0;
+    for (int i = 0; i < 109; i++)
+        res += abs(315 - accumulate(cube.constraints[i].begin(),
+                                    cube.constraints[i].end(),
+                                    0));
+    return res;
 }
 
 int FITNESS_FUNCTION::OPTION_1(CUBE cube)
