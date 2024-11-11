@@ -5,7 +5,4 @@
 
 int main()
 {
-    CUBE c(1);
-    HCSA algo(c);
-    algo.RUN(true);
 }

@@ -3,11 +3,10 @@
 #include <chrono>
 #include <climits>
 #include <ctime>
-#include <fstream>
 #include <filesystem>
-#include <iomanip>
+#include <fstream>
 #include <iostream>
-#include <numeric>
+#include <string>
 
 using namespace std;
 
@@ -59,13 +58,21 @@ void HCSA::RUN(bool log)
     string statusPath = directoryPath + "/status.txt";
     string scorePath = directoryPath + "/score.txt";
     string swapPath = directoryPath + "/swap.txt";
+    string timePath = directoryPath + "/time.txt";
 
     // ofstream objects
     ofstream F_cube(cubePath);
     ofstream F_status(statusPath);
     ofstream F_score(scorePath);
     ofstream F_swap(swapPath);
+    ofstream F_time(timePath);
 
+    // time counter
+    chrono::high_resolution_clock::time_point start, end;
+    chrono::duration<double> duration;
+    double seconds;
+
+    start = chrono::high_resolution_clock::now();
     // log initial state
     for (int i : this->cube.RESHAPE())
         F_cube << i << " ";
@@ -75,10 +82,15 @@ void HCSA::RUN(bool log)
     F_status << '\n';
     F_score << this->obj_func.CALCULATE(this->cube) << '\n';
     F_swap << -1 << " " << -1 << '\n';
+    end = chrono::high_resolution_clock::now();
+    duration = end - start;
+    seconds = duration.count();
+    F_time << seconds << '\n';
 
     int iteration = 0;
     while (true)
     {
+        start = chrono::high_resolution_clock::now();
         iteration++;
         pair<int, int> bestSwap = this->FIND_BEST();
         int curScore = this->obj_func.CALCULATE(this->cube);
@@ -89,9 +101,13 @@ void HCSA::RUN(bool log)
             this->cube.SWAP(bestSwap.first, bestSwap.second);
             return;
         }
+        end = chrono::high_resolution_clock::now();
+        duration = end - start;
+        seconds = duration.count();
 
         // output to stdout
-        cout << "HSCA ITERATION-" << iteration << " " << curScore << " " << newScore << endl;
+        cout << "HSCA ITERATION-" << iteration << " " << seconds << " s." << endl;
+
         // log every iteration
         for (int i : this->cube.RESHAPE())
             F_cube << i << " ";
@@ -101,6 +117,7 @@ void HCSA::RUN(bool log)
         F_status << '\n';
         F_score << newScore << '\n';
         F_swap << bestSwap.first << " " << bestSwap.second << '\n';
+        F_time << seconds << '\n';
     }
 
     // close ofstream objects
