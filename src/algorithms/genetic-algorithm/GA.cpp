@@ -156,7 +156,7 @@ void GA::SET_POPULATION_SIZE(int pop_size)
 
 void GA::SET_ITERATION(int iter) { this->iteration = iter; }
 
-void GA::RUN(bool log)
+void GA::RUN()
 {
     // logging
     string directoryPath = "log/GA__";
@@ -208,6 +208,8 @@ void GA::RUN(bool log)
     F_Status << '\n';
     F_Time << seconds << '\n';
 
+    double total = seconds;
+
     for (int it = 1; it <= this->iteration; it++)
     {
         start = chrono::high_resolution_clock::now();
@@ -249,6 +251,7 @@ void GA::RUN(bool log)
         F_Status << '\n';
         F_Time << seconds << '\n';
         cout << "GA ITERATION-" << it << " " << seconds << " s." << endl;
+        total += seconds;
     }
 
     F_BCube.close();
@@ -256,4 +259,5 @@ void GA::RUN(bool log)
     F_AScore.close();
     F_Status.close();
     F_Time.close();
+    cout << "FINISHED IN: " << total << " s." << endl;
 }

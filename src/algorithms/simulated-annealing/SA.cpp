@@ -119,6 +119,8 @@ void SA::RUN(bool log)
     F_prob << 1 << '\n';
     F_verdict << "YES" << '\n';
 
+    double total = mili;
+
     int iteration = 0;
     while (true)
     {
@@ -169,8 +171,11 @@ void SA::RUN(bool log)
         F_prob << min(exp(deltaE / T), 1.0) << '\n';
         F_verdict << verdict << '\n';
 
-        if (fabs(T) < 1e-9)
-            return;
+        total += mili;
+
+        if (fabs(T) < 1e-4)
+            break;
+        ;
     }
     F_cube.close();
     F_status.close();
@@ -181,4 +186,6 @@ void SA::RUN(bool log)
     F_temp.close();
     F_prob.close();
     F_verdict.close();
+
+    cout << "FINISHED IN: " << total << " ms." << endl;
 }

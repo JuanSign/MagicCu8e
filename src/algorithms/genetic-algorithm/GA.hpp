@@ -28,7 +28,7 @@ public:
 
     void SET_POPULATION_SIZE(int pop_size);
     void SET_ITERATION(int iter);
-    void RUN(bool log = false);
+    void RUN();
 };
 
 #endif

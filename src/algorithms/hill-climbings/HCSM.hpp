@@ -19,7 +19,7 @@ public:
 
     void SET_CUBE(CUBE cube);
     void SET_OPTION(int opt = 0);
-    void RUN(bool log = false);
+    void RUN();
 };
 
 #endif

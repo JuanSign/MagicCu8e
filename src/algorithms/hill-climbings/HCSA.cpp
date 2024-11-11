@@ -40,7 +40,7 @@ pair<int, int> HCSA::FIND_BEST()
     return res;
 }
 
-void HCSA::RUN(bool log)
+void HCSA::RUN()
 {
     // logging
     string directoryPath = "log/HCSA__";
@@ -87,6 +87,8 @@ void HCSA::RUN(bool log)
     seconds = duration.count();
     F_time << seconds << '\n';
 
+    double total = seconds;
+
     int iteration = 0;
     while (true)
     {
@@ -99,7 +101,7 @@ void HCSA::RUN(bool log)
         if (newScore >= curScore)
         {
             this->cube.SWAP(bestSwap.first, bestSwap.second);
-            return;
+            break;
         }
         end = chrono::high_resolution_clock::now();
         duration = end - start;
@@ -118,6 +120,7 @@ void HCSA::RUN(bool log)
         F_score << newScore << '\n';
         F_swap << bestSwap.first << " " << bestSwap.second << '\n';
         F_time << seconds << '\n';
+        total += seconds;
     }
 
     // close ofstream objects
@@ -125,4 +128,6 @@ void HCSA::RUN(bool log)
     F_status.close();
     F_score.close();
     F_swap.close();
+
+    cout << "FINISHED IN: " << total << " s." << endl;
 }

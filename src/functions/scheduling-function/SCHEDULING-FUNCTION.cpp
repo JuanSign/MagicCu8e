@@ -50,9 +50,11 @@ void SCHEDULING_FUNCTION::SET_OPTION(int opt, double initial_temp)
         this->alpha = 0.1;
         break;
     case 2:
-        this->alpha = 0.01;
+        this->temperature = 100;
+        this->alpha = 100;
         break;
     case 3:
+        this->temperature = 3;
         this->alpha = 5;
         break;
     default:

@@ -16,9 +16,9 @@ private:
     double OPTION_5(int iteration); // kirkpatrick, T0 = 1000
 
 public:
-    SCHEDULING_FUNCTION(int option = 0, double initial_temp = 1000);
+    SCHEDULING_FUNCTION(int option = 0, double initial_temp = 100);
 
-    void SET_OPTION(int option = 0, double initial_temp = 1000);
+    void SET_OPTION(int option = 0, double initial_temp = 100);
     void SET_ALPHA(double alpha);
     double CALCULATE(int iteration);
     double GET_INITIAL();

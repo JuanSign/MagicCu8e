@@ -41,7 +41,7 @@ tuple<int, int, int> HCS::GENERATE_SWAP()
     return {num1, num2, obj_score};
 }
 
-void HCS::RUN(bool log)
+void HCS::RUN()
 {
     // logging
     string directoryPath = "log/HCS__";
@@ -88,6 +88,8 @@ void HCS::RUN(bool log)
     seconds = duration.count();
     F_time << seconds << '\n';
 
+    double total = seconds;
+
     for (int iteration = 1; iteration <= this->NMAX; iteration++)
     {
         start = chrono::high_resolution_clock::now();
@@ -114,6 +116,7 @@ void HCS::RUN(bool log)
         F_score << get<2>(swapResult) << '\n';
         F_swap << get<0>(swapResult) << " " << get<1>(swapResult) << '\n';
         F_time << seconds << '\n';
+        total += seconds;
     }
 
     // close ofstream objects
@@ -121,4 +124,5 @@ void HCS::RUN(bool log)
     F_status.close();
     F_score.close();
     F_swap.close();
+    cout << "FINISHED IN: " << total << " s." << endl;
 }
