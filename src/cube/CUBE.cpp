@@ -179,3 +179,18 @@ void CUBE::PRINT_CONSTRAINS()
     }
     cout << "------" << endl;
 }
+
+array<int, 125> CUBE::RESHAPE()
+{
+    array<int, 125> cube2d;
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            for (int k = 0; k < 5; k++)
+            {
+                cube2d[i * 25 + j * 5 + k] = this->data[i][j][k];
+            }
+        }
+    }
+}

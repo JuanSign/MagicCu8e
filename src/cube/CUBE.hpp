@@ -23,6 +23,7 @@ public:
     void SWAP(int i, int j);
     void PRINT_CUBE();
     void PRINT_CONSTRAINS();
+    array<int, 125> RESHAPE();
 };
 
 #endif
