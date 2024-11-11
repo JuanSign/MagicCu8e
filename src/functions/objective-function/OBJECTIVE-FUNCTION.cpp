@@ -1,5 +1,6 @@
 #include "OBJECTIVE-FUNCTION.hpp"
 
+#include <cstdlib>
 #include <numeric>
 
 using namespace std;

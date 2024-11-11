@@ -1,5 +1,6 @@
 #include "GA.hpp"
 
+#include <algorithm>
 #include <random>
 #include <set>
 
@@ -106,7 +107,7 @@ array<int, 125> GA::REPRODUCE(CUBE c1, CUBE c2)
     return child;
 }
 
-void MUTATE(CUBE &cube)
+void GA::MUTATE(CUBE &cube)
 {
     random_device rd;
     mt19937 gen(rd());
@@ -149,7 +150,7 @@ void GA::SET_POPULATION_SIZE(int pop_size)
 
 void GA::SET_ITERATION(int iter) { this->iteration = iter; }
 
-void GA::RUN(bool output = false)
+void GA::RUN(bool output)
 {
     vector<int>::iterator it = min_element(this->fit_score.begin(), this->fit_score.end());
     int cubeID = distance(this->fit_score.begin(), it);

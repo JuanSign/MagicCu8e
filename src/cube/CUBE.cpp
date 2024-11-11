@@ -203,4 +203,5 @@ array<int, 125> CUBE::RESHAPE()
             }
         }
     }
+    return cube2d;
 }

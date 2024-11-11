@@ -54,7 +54,7 @@ void SA::SET_SCHED(int sched, int alpha)
         this->sched_func.SET_ALPHA(alpha);
 }
 
-void SA::RUN(bool output = false)
+void SA::RUN(bool output)
 {
     int iteration = 1;
     while (true)

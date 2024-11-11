@@ -15,9 +15,9 @@ int FITNESS_FUNCTION::OPTION_2(CUBE cube)
     return 0;
 }
 
-FITNESS_FUNCTION::FITNESS_FUNCTION(int opt = 0) { this->option = opt; }
+FITNESS_FUNCTION::FITNESS_FUNCTION(int opt) { this->option = opt; }
 
-void FITNESS_FUNCTION::SET_OPTION(int opt = 0) { this->option = opt; }
+void FITNESS_FUNCTION::SET_OPTION(int opt) { this->option = opt; }
 
 int FITNESS_FUNCTION::CALCULATE(CUBE cube)
 {
