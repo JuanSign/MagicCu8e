@@ -114,7 +114,7 @@ void HCSM::RUN(bool log)
         seconds = duration.count();
 
         // output to stdout
-        cout << "HSCM ITERATION-" << iteration << " " << seconds << " s." << endl;
+        cout << "HCSM ITERATION-" << iteration << " " << seconds << " s." << endl;
 
         // log every iteration
         for (int i : this->cube.RESHAPE())

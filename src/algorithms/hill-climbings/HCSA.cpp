@@ -106,7 +106,7 @@ void HCSA::RUN(bool log)
         seconds = duration.count();
 
         // output to stdout
-        cout << "HSCA ITERATION-" << iteration << " " << seconds << " s." << endl;
+        cout << "HCSA ITERATION-" << iteration << " " << seconds << " s." << endl;
 
         // log every iteration
         for (int i : this->cube.RESHAPE())
