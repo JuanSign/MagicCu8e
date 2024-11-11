@@ -51,7 +51,7 @@ Pastikan Anda memiliki **g++** terpasang pada sistem Anda. Berikut adalah cara u
 
 3. Kompilasi program dengan menggunakan perintah berikut:
    ```bash
-   g++ src/main.cpp src/algorithms/genetic-algorithm/GA.cpp src/algorithms/hill-climbings/HCSA.cpp src/algorithms/simulated-annealing/SA.cpp src/cube/CUBE.cpp src/functions/fitness-function/FITNESS-FUNCTION.cpp src/functions/objective-function/OBJECTIVE-FUNCTION.cpp src/functions/scheduling-function/SCHEDULING-FUNCTION.cpp -o main
+   g++ src/main.cpp src/algorithms/genetic-algorithm/GA.cpp src/algorithms/hill-climbings/HCSA.cpp src/algorithms/simulated-annealing/SA.cpp src/cube/CUBE.cpp src/functions/fitness-function/FITNESS-FUNCTION.cpp src/functions/objective-function/OBJECTIVE-FUNCTION.cpp src/functions/scheduling-function/SCHEDULING-FUNCTION.cpp .\src\algorithms\hill-climbings\HCS.cpp .\src\algorithms\hill-climbings\HCSM.cpp -o main
 
 4. Jalankan program:
    ```bash
