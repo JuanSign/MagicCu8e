@@ -30,10 +30,16 @@ void OBJECTIVE_FUNCTION::SET_OPTION(int opt) { this->option = opt; }
 
 int OBJECTIVE_FUNCTION::CALCULATE(CUBE cube)
 {
-    if (this->option == 1)
-        return OPTION_1(cube);
-    else if (this->option == 2)
-        return OPTION_2(cube);
-    else
-        return OPTION_0(cube);
+    switch (option)
+    {
+    case 1:
+        return this->OPTION_1(cube);
+        break;
+    case 2:
+        return this->OPTION_2(cube);
+        break;
+    default:
+        return this->OPTION_0(cube);
+        break;
+    }
 }
