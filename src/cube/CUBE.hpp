@@ -26,6 +26,7 @@ public:
     void PRINT_CUBE();
     void PRINT_CONSTRAINS();
     array<int, 125> RESHAPE();
+    array<int, 125> GET_STATUS();
 };
 
 #endif

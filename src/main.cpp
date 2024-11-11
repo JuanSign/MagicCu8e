@@ -6,6 +6,6 @@
 int main()
 {
     CUBE c(1);
-    SA algo(c);
-    algo.RUN();
+    HCSA algo(c);
+    algo.RUN(true);
 }

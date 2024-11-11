@@ -1,6 +1,7 @@
 #include "CUBE.hpp"
 
 #include <algorithm>
+#include <cmath>
 #include <iostream>
 #include <numeric>
 #include <random>
@@ -204,4 +205,22 @@ array<int, 125> CUBE::RESHAPE()
         }
     }
     return cube2d;
+}
+
+array<int, 125> CUBE::GET_STATUS()
+{
+    array<int, 125> status;
+    for (int i = 0; i < 125; i++)
+    {
+        double avgDif = 0;
+        for (int c : this->adjacency_list[i])
+        {
+            avgDif += abs(315 - accumulate(this->constraints[c].begin(),
+                                           this->constraints[c].end(),
+                                           0));
+        }
+        avgDif /= (int)this->adjacency_list[i].size();
+        status[i] = avgDif;
+    }
+    return status;
 }

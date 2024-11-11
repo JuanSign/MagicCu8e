@@ -10,10 +10,6 @@ private:
     CUBE cube;
     OBJECTIVE_FUNCTION obj_func;
 
-    vector<double> difference_history;
-    vector<double> time_history;
-    vector<int> obj_score;
-
     pair<int, int> FIND_BEST();
 
 public:
@@ -21,7 +17,7 @@ public:
 
     void SET_CUBE(CUBE cube);
     void SET_OPTION(int opt = 0);
-    void RUN(bool output = false);
+    void RUN(bool log = false);
 };
 
 #endif
