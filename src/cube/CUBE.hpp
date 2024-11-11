@@ -20,6 +20,8 @@ public:
     array<vector<int>, 125> adjacency_list;
 
     CUBE(int seed = 0);
+    CUBE(array<int, 125> arr);
+
     void SWAP(int i, int j);
     void PRINT_CUBE();
     void PRINT_CONSTRAINS();

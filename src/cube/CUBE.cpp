@@ -117,6 +117,16 @@ CUBE::CUBE(int seed)
     this->GENERATE_CONSTRAINTS();
 }
 
+CUBE::CUBE(array<int, 125> arr)
+{
+    for (int i = 0; i < 125; i++)
+    {
+        this->data[i / 25][(i % 25) / 5][i % 5] = arr[i];
+    }
+    this->GENERATE_POSITIONS();
+    this->GENERATE_CONSTRAINTS();
+}
+
 void CUBE::SWAP(int i, int j)
 {
     array<int, 3> i_cord = this->positions[i - 1];
