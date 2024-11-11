@@ -1,6 +1,23 @@
-# MagicCu8e
+# 🌈✨ MagicCu8e ✨🎲
 
 Repository ini berisi implementasi algoritma *local search* untuk memecahkan permasalahan **Diagonal Magic Cube** dengan berbagai pendekatan, termasuk *hill-climbing*, *simulated annealing*, dan *genetic algorithm*. Diagonal Magic Cube adalah kubus yang terdiri dari angka-angka yang disusun sedemikian rupa sehingga jumlahnya pada berbagai komponen (baris, kolom, diagonal) mencapai nilai konstan yang disebut *magic number*. Project ini merupakan tugas besar yang dilakukan oleh tim untuk mata kuliah **Dasar Inteligensi Artifisial** di Institut Teknologi Bandung.
+
+
+          +-----------------------+
+         /                       /|
+        /                       / |
+       /                       /  |
+      +-----------------------+   |
+      |                       |   |
+      |                       |   |
+      |                       |   |
+      |                       |   |
+      |                       |   +
+      |                       |  /
+      |                       | /
+      |                       |/
+      +-----------------------+
+
 
 ## Deskripsi Singkat
 
